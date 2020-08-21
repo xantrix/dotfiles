@@ -1,0 +1,24 @@
+{
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "terminal.integrated.fontFamily": "DroidSansMono Nerd Font Mono",
+    "terminal.external.linuxExec": "kitty",
+    "terminal.integrated.fontWeightBold": "normal",
+    "workbench.colorCustomizations" : {
+        "terminal.foreground" : "#ffffffc0",
+        "terminal.background" : "#000000"
+    },
+    "window.zoomLevel": 1,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "git.alwaysSignOff": true,
+    "grammarly.userWords": [],
+    "cmake.configureOnOpen": true,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "gitlens.advanced.telemetry.enabled": false
+}
