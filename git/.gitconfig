@@ -29,3 +29,6 @@
 
 [pull]
   rebase = true
+
+[format]
+	signoff = true
