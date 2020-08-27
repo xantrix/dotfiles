@@ -1,24 +1,136 @@
 {
+    "git.alwaysSignOff": true,
+    "git.enableCommitSigning": true,
     "git.autofetch": true,
     "git.confirmSync": false,
     "terminal.integrated.fontFamily": "DroidSansMono Nerd Font Mono",
     "terminal.external.linuxExec": "kitty",
     "terminal.integrated.fontWeightBold": "normal",
+    "window.zoomLevel": 1,
+    "docker.showExplorer": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "explorer.openEditors.visible": 20,
+    "explorer.autoReveal": false,
+    "editor.tabSize": 2,
+    "editor.multiCursorModifier": "alt",
+    "editor.maxTokenizationLineLength": 20000,
+    "editor.minimap.enabled": false,
+    "editor.renderControlCharacters": false,
+    "editor.suggestSelection": "first",
+    "workbench.settings.editor": "json",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.panel.defaultLocation": "bottom",
     "workbench.colorCustomizations" : {
         "terminal.foreground" : "#ffffffc0",
         "terminal.background" : "#000000"
     },
-    "window.zoomLevel": 1,
-    "explorer.confirmDragAndDrop": false,
     "workbench.iconTheme": "material-icon-theme",
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "go.formatTool": "goimports",
-    "go.useLanguageServer": true,
-    "git.alwaysSignOff": true,
-    "grammarly.userWords": [],
-    "cmake.configureOnOpen": true,
+    "stylelint.enable": false,
+    "breadcrumbs.enabled": true,
+    "php.executablePath": "/usr/local/bin/php",
+    "php.suggest.basic": false,
+    "gitlens.keymap": "chorded",
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.views.search.files.layout": "tree",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.hovers.enabled": false,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    "gitlens.advanced.telemetry.enabled": false
+    "gitlens.advanced.telemetry.enabled": false,
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "sshfs.configs": [
+        {
+            "host": "172.31.244.80",
+            "name": "server",
+            "password": "pass",
+            "username": "user"
+        },
+    ],
+    "liveshare.featureSet": "stable",
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "autoimport.showNotifications": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    
+    "blade.format.enable": true,
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "external": true,
+        "args": [
+            "serve"
+        ]
+    },
+    
+    // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        // Optional: Disable snippets, as they conflict with completion ranking.
+        "editor.snippetSuggestions": "none",
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+    },
+    // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
+    "gopls": {
+         // Add parameter placeholders when completing a function.
+        "usePlaceholders": true,
+        // If true, enable additional analyses with staticcheck.
+        // Warning: This will significantly increase memory usage.
+        "staticcheck": false,
+    },
+    "files.autoSave": "off",
+    "intelephense.diagnostics.undefinedTypes": false,
+    "yaml.schemas": {
+        "kubernetes": "*.yaml"
+    },
+    "files.associations": {
+        "tests/tasks/*.yaml": "ansible"
+    },
+    "macros": {
+        "execCurLn": [
+            "expandLineSelection",
+            "workbench.action.terminal.runSelectedText",
+            //"cancelSelection"
+        ]
+    },
+    "google-translate.serverDomain": "https://translate.google.com",
+    "google-translate.firstLanguage": "it-it",
+    "settingsSync.ignoredSettings": [
+
+    ]
 }
