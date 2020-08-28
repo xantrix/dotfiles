@@ -13,6 +13,7 @@
     "explorer.openEditors.visible": 20,
     "explorer.autoReveal": false,
     "editor.tabSize": 2,
+    "editor.fontSize": 14,
     "editor.multiCursorModifier": "alt",
     "editor.maxTokenizationLineLength": 20000,
     "editor.minimap.enabled": false,
