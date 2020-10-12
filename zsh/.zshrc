@@ -100,7 +100,8 @@ plugins=(
   encode64
   golang
   jsontools
-  sudo 
+  sudo
+  kubetail
 )
 
 
@@ -156,5 +157,13 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs) # default: status root_indicator background_jobs history time
 source $ZSH/oh-my-zsh.sh
 
+[[ ! -f ~/private-aliases.zsh ]] || source ~/private-aliases.zsh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/xan/google-cloud-sdk/path.zsh.inc' ]; then . '/home/xan/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/xan/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/xan/google-cloud-sdk/completion.zsh.inc'; fi
