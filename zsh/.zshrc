@@ -114,8 +114,17 @@ export PATH=$PATH:$HOME/bin
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
-export KUBECONFIG=${HOME}/.kube/config:${HOME}/.kube/kind-config-kind
+# do not set KUBECONFIG explicitly 
+#export KUBECONFIG=${HOME}/.kube/config:${HOME}/.kube/kind-config-kind
 
+# dynamic kubeconfig per virtual terminal to avoid mutating global state
+if [ -z "$KUBECONFIG" ]; then
+  export KUBECONFIG=$(mktemp --tmpdir kubeconfig.XXXXXXXX)
+  #remove the temp kubeconfig file when at shell exit
+  trap "rm -f $KUBECONFIG" EXIT
+fi
+# add kind config file
+export KUBECONFIG=$KUBECONFIG:${HOME}/.kube/kind-config-kind
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
