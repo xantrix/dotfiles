@@ -126,6 +126,9 @@ fi
 # add kind config file
 export KUBECONFIG=$KUBECONFIG:${HOME}/.kube/kind-config-kind
 
+# The agent will quit after one hour, unless the LPASS_AGENT_TIMEOUT seconds in which to quit, or 0 to never quit
+export LPASS_AGENT_TIMEOUT=0
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
