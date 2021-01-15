@@ -109,13 +109,14 @@ plugins=(
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export CDPATH=.:$HOME:$HOME/code
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 # do not set KUBECONFIG explicitly 
 #export KUBECONFIG=${HOME}/.kube/config:${HOME}/.kube/kind-config-kind
+#export KUBECONFIG=${HOME}/.kube/config
 
 # dynamic kubeconfig per virtual terminal to avoid mutating global state
 if [ -z "$KUBECONFIG" ]; then
@@ -124,7 +125,7 @@ if [ -z "$KUBECONFIG" ]; then
   trap "rm -f $KUBECONFIG" EXIT
 fi
 # add kind config file
-export KUBECONFIG=$KUBECONFIG:${HOME}/.kube/kind-config-kind
+# export KUBECONFIG=$KUBECONFIG:${HOME}/.kube/kind-config-kind
 
 # The agent will quit after one hour, unless the LPASS_AGENT_TIMEOUT seconds in which to quit, or 0 to never quit
 export LPASS_AGENT_TIMEOUT=0
