@@ -9,3 +9,12 @@ The default is to automatically detect based on the desktop environment
 --enable-native-gpu-memory-buffers 
 # only in wayland
 --enable-webrtc-pipewire-capturer 
+
+https://www.chromium.org/developers/design-documents/chromium-graphics/how-to-get-gpu-rasterization
+--force-gpu-rasterization
+
+# Video Decode: Hardware accelerated
+--enable-accelerated-video-decode
+
+# Vulkan
+https://linuxreviews.org/Chromium_79_Has_Experimental_Vulkan_Support_And_You_Should_NOT_Enable_It
