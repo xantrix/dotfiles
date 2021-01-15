@@ -25,5 +25,22 @@ alias lockscreen='xdg-screensaver lock'
 alias bye='lockscreen'
 
 # etc...
+alias ccc='clear'
 
 alias paclist="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
+
+# kubectl
+# alias G="| grep" (not supported in bash)
+# export do="-oyaml --dry-run=client" (doesn't work)
+
+alias kns="k config view | grep namespace"
+alias kcns='kubectl config set-context $(kubectl config current-context) --namespace'
+alias kg="k get"
+alias kd="k describe"
+alias kc="k create"
+
+# from plugings
+# alias kdel="kubectl delete"
+# alias keti="kubectl exec -ti"
+# alias kl="kubectl logs"
+# alias klf="kubectl logs -f"
