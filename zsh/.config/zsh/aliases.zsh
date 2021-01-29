@@ -25,6 +25,7 @@ alias lockscreen='xdg-screensaver lock'
 alias bye='lockscreen'
 
 # etc...
+alias v='vim'
 alias ccc='clear'
 
 alias paclist="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
@@ -44,3 +45,9 @@ alias kc="k create"
 # alias keti="kubectl exec -ti"
 # alias kl="kubectl logs"
 # alias klf="kubectl logs -f"
+
+# see: dynamic kubeconfig
+klogin(){
+    set -x
+    cat .kube/$1 > $KUBECONFIG
+}
