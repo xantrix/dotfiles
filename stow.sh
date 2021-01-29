@@ -13,3 +13,4 @@ $stow kitty
 $stow zsh
 $stow vscode
 $stow tmux
+$stow vim
