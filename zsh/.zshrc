@@ -27,7 +27,7 @@ export LC_ALL="en_US.UTF-8"
 
 export TERM=xterm-256color
 
-export EDITOR=nano
+export EDITOR=vim
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -88,12 +88,16 @@ ZSH_CUSTOM=$HOME/.config/zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 plugins=(
   archlinux
   git
   colored-man-pages
   colorize
   common-aliases
+  dirhistory
+  nmap
+  per-directory-history
   docker
   kubectl
   minikube
@@ -167,7 +171,9 @@ POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\uf176'
 POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\uf175'
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs) # default: status root_indicator background_jobs history time
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+  status root_indicator background_jobs kubecontext terraform
+  ) # default: status root_indicator background_jobs history time
 source $ZSH/oh-my-zsh.sh
 
 [[ ! -f ~/private-aliases.zsh ]] || source ~/private-aliases.zsh
