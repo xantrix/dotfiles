@@ -45,9 +45,33 @@ alias kc="k create"
 # alias keti="kubectl exec -ti"
 # alias kl="kubectl logs"
 # alias klf="kubectl logs -f"
+# https://github.com/ahmetb/kubectl-aliases
 
 # see: dynamic kubeconfig
 klogin(){
-    set -x
-    cat .kube/$1 > $KUBECONFIG
+    #set -x
+    kcgen
+    cat ~/.kube/$1 > $KUBECONFIG
+}
+
+kcecho(){
+    echo $KUBECONFIG
+    cat $KUBECONFIG
+}
+
+kcgen(){
+    echo "Gen new KUBECONFIG file in /tmp"
+    export KUBECONFIG=$(mktemp --tmpdir kubeconfig.XXXXXXXX)
+    ls $KUBECONFIG
+}
+
+kcdel(){
+    echo "Delete KUBECONFIG file"
+    rm -f $KUBECONFIG
+}
+
+kcdel_tmp_all(){
+    echo "Delete all KUBECONFIG.tmp files"
+    rm -f /tmp/kubeconfig.*
+    ls /tmp/kubeconfig.*
 }
