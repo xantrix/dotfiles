@@ -29,6 +29,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/xantrix/dotfiles/master/inst
 
 ## Keyboard shortcuts
 ### zsh + plugins
+https://gist.github.com/acamino/2bc8df5e2ed0f99ddbe7a6fddb7773a6
 Ctrl+R global history 
 Ctrl+G per-dir history
 
@@ -37,6 +38,7 @@ https://sw.kovidgoyal.net/kitty/conf.html
 
 ### Tmux
 https://tmuxcheatsheet.com/
+https://gist.github.com/MohamedAlaa/2961058
 
 ### Vim
 https://vim.rtorr.com/
