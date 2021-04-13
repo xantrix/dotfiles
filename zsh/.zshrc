@@ -121,6 +121,8 @@ export PATH=$PATH:$GOBIN
 # do not set KUBECONFIG explicitly 
 #export KUBECONFIG=${HOME}/.kube/config:${HOME}/.kube/kind-config-kind
 #export KUBECONFIG=${HOME}/.kube/config
+# install krew https://krew.sigs.k8s.io/docs/user-guide/setup/install/
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # dynamic kubeconfig per virtual terminal to avoid mutating global state
 if [ -z "$KUBECONFIG" ]; then
