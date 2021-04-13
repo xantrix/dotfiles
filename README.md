@@ -32,6 +32,13 @@ bash <(curl -fsSL https://raw.githubusercontent.com/xantrix/dotfiles/master/inst
 https://gist.github.com/acamino/2bc8df5e2ed0f99ddbe7a6fddb7773a6
 Ctrl+R global history 
 Ctrl+G per-dir history
+Ctrl+U clear line
+CTRL+L clear screen
+CTRL + A — Move to the beginning of the line
+CTRL + E — Move to the end of the line
+CTRL + [left arrow] — Move one word backward (on some systems this is ALT + B)
+CTRL + [right arrow] — Move one word forward (on some systems this is ALT + F)
+CTRL + K — Clear the characters on the line after the current cursor position
 
 ### Kitty
 https://sw.kovidgoyal.net/kitty/conf.html
