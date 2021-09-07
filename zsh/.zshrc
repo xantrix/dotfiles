@@ -106,6 +106,9 @@ plugins=(
   sudo
   kubetail
 )
+# https://www.ashryan.io/finding-out-where-zsh-alias-and-settings-are-defined/
+# zsh -ixc : 2>&1 | grep "G="
+# ~/.oh-my-zsh/plugins/common-aliases/common-aliases.plugin.zsh:26> alias -g 'G=| grep'
 
 
 # User configuration
@@ -134,6 +137,10 @@ fi
 
 # The agent will quit after one hour, unless the LPASS_AGENT_TIMEOUT seconds in which to quit, or 0 to never quit
 export LPASS_AGENT_TIMEOUT=0
+
+# Ruby https://wiki.archlinux.org/title/ruby#Installing_Ruby
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
