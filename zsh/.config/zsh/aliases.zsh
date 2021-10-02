@@ -75,3 +75,16 @@ kcdel_tmp_all(){
     rm -f /tmp/kubeconfig.*
     ls /tmp/kubeconfig.*
 }
+
+rancher-init-configfiles(){
+ADD_KUBECONFIG_FILES="$HOME/.kube"
+mkdir -p "${ADD_KUBECONFIG_FILES}"
+rancher cluster ls --format json | jq -r '.Cluster.name' | while read cluster; do
+    rancher cluster kf $cluster > "${ADD_KUBECONFIG_FILES}/$cluster"
+    echo "creating kubeconfig '${ADD_KUBECONFIG_FILES}/$cluster'"
+    yq --inplace e '
+    del( .users[0].user.exec.args.[] | select(. == "--user*") ) |
+    .users[0].user.exec.args += ["--auth-provider=oktaProvider", "--user=foobar"]
+    ' "${ADD_KUBECONFIG_FILES}/$cluster"
+done
+}
