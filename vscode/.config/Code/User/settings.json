@@ -6,7 +6,6 @@
     "terminal.integrated.fontFamily": "DroidSansMono Nerd Font Mono",
     "terminal.external.linuxExec": "kitty",
     "terminal.integrated.fontWeightBold": "normal",
-    "window.zoomLevel": 1,
     "docker.showExplorer": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
@@ -17,7 +16,7 @@
     "editor.multiCursorModifier": "alt",
     "editor.maxTokenizationLineLength": 20000,
     "editor.minimap.enabled": false,
-    "editor.renderControlCharacters": false,
+    "editor.renderControlCharacters": true,
     "editor.suggestSelection": "first",
     "workbench.settings.editor": "json",
     "workbench.startupEditor": "newUntitledFile",
@@ -114,13 +113,15 @@
         // Warning: This will significantly increase memory usage.
         "staticcheck": false,
     },
-    "files.autoSave": "off",
+    "files.autoSave": "afterDelay",
     "intelephense.diagnostics.undefinedTypes": false,
     "yaml.schemas": {
-        "kubernetes": "*.yaml"
+        // "kubernetes": "*.yaml"
     },
     "files.associations": {
-        "tests/tasks/*.yaml": "ansible"
+        "tests/tasks/*.yaml": "ansible",
+        "tasks/**/*.yaml": "ansible",
+        "playbook*.yaml": "ansible",
     },
     "macros": {
         "execCurLn": [
@@ -133,5 +134,22 @@
     "google-translate.firstLanguage": "it-it",
     "settingsSync.ignoredSettings": [
 
-    ]
+    ],
+    "editor.mouseWheelZoom": true,
+    "diffEditor.renderSideBySide": true,
+    "gitlens.views.repositories.enabled": true,
+    "workbench.activityBar.visible": true,
+    "gitlens.views.searchAndCompare.files.layout": "tree",
+    "python.languageServer": "Microsoft",
+    "editor.wordWrap": "on",
+    "gitlens.views.showRelativeDateMarkers": false,
+    "editor.renderWhitespace": "all",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "terminal.integrated.tabs.enabled": true,
+    "redhat.telemetry.enabled": false,
+    "gitlens.views.commits.files.layout": "tree",
+    "gitlens.views.commits.showBranchComparison": false,
+    "window.zoomLevel": 0
 }
