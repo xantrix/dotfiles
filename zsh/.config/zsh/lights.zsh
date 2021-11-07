@@ -7,38 +7,32 @@ gbrightness() {
 }
 
 # Brightness for external monitor via i2c
-ddcbrightness () {
+# get all features using ddcutil -d <monitor> getvcp KNOWN
+# VCP code 0x10 (Brightness max 100
+# VCP code 0x12 (Contrast max 100
+# $1 monitor
+ddcbrightness-get() {
+    ddcutil -d $1 getvcp 10
+}
+ddccontrast-get() {
+    ddcutil -d $1 getvcp 12
+}
+# $1 monitor, $2 value
+ddcbrightness-set() {
     nohup sh -c \
-        "ddcutil setvcp -d 1 10 $1 && ddcutil setvcp -d 2 10 $1" \
+        "ddcutil setvcp -d $1 10 $2" \
         > /dev/null 2>&1 &!
 }
-
-# Philips Hue scene switcher
-huescene() {
-    # Default Group ID: 1 (living room)
-    : "${2:=1}"
-    id=$(hueadm scenes -o id,name -H | grep -m 1 $1 | awk '{split($0,a," "); print a[1]}')
-    hueadm recall-scene $id $2 > /dev/null
-}
-
-desklamp() {
-    : "${1:=on}"
-    # Default Lamp ID: 3 (desk lamp)
-    hueadm light 3 $1 
+ddccontrast-set() {
+    nohup sh -c \
+        "ddcutil setvcp -d $1 12 $2" \
+        > /dev/null 2>&1 &!
 }
 
 nightlight() {
     gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
-    gbrightness Keyboard 50
-    gbrightness Screen 10
-    ddcbrightness 0
-    huescene nightmood
 }
 
 daylight() {
     gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled false
-    gbrightness Keyboard 100    
-    gbrightness Screen 20
-    ddcbrightness 5
-    huescene daymood
 }
