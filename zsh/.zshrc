@@ -27,6 +27,7 @@ export LC_ALL="en_US.UTF-8"
 export TERM=xterm-256color
 
 export EDITOR=vim
+export SUDO_EDITOR=vi
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -96,7 +97,6 @@ plugins=(
   common-aliases
   dirhistory
   nmap
-  per-directory-history
   docker
   kubectl
   minikube
@@ -106,6 +106,7 @@ plugins=(
   sudo
   kubetail
 )
+# disabled: per-directory-history
 # https://www.ashryan.io/finding-out-where-zsh-alias-and-settings-are-defined/
 # zsh -ixc : 2>&1 | grep "G="
 # ~/.oh-my-zsh/plugins/common-aliases/common-aliases.plugin.zsh:26> alias -g 'G=| grep'
