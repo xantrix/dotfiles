@@ -1,6 +1,34 @@
 # Arch docs 
 https://wiki.archlinux.org/title/chromium
 
+google-chrome AUR — stable release; chrome-flags.conf
+google-chrome-beta AUR — beta release;
+google-chrome-dev AUR — development release. chrome-dev-flags.conf
+
+# User Data Directory
+https://chromium.googlesource.com/chromium/src/+/HEAD/docs/user_data_dir.md#Linux
+
+# To determine the user data directory for a running Chrome instance:
+Navigate to chrome://version
+Look for the `Profile Path` field. This gives the path to the profile directory.
+The user data directory is the parent of the profile directory.
+
+# To determine the Profiles directory
+chrome://local-state/
+Search "profile" key
+
+The default location is in ~/.config:
+
+[Chrome Stable] ~/.config/google-chrome
+[Chrome Beta] ~/.config/google-chrome-beta
+[Chrome Dev] ~/.config/google-chrome-unstable
+[Chromium] ~/.config/chromium
+
+# Cache
+[user data dir] ~/.config/google-chrome
+[profile dir] ~/.config/google-chrome/Default
+[user cache dir] ~/.cache/google-chrome/Default
+
 # chrome flags
 chrome://flags/
 do not use comments in chrome-flags.conf: it prevents to pass the flags correctly
@@ -13,7 +41,11 @@ if the flag is enabled in
    "browser": {
       "enabled_labs_experiments": [ "enable-webrtc-pipewire-capturer@1" ],
 
-
+# Force GPU acceleration
+https://wiki.archlinux.org/title/chromium#Force_GPU_acceleration
+--ignore-gpu-blocklist
+--enable-gpu-rasterization
+--enable-zero-copy
 
 # set password store
 best to explicitly pass the password store to use (--password-store=gnome). 
