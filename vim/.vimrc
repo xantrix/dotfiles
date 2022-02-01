@@ -9,7 +9,7 @@ set si "Smart indent
 set wrap "Wrap lines
 set pastetoggle=<f5>
 
-set number
+"set number
 set ruler
 syntax enable 
 
