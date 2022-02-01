@@ -76,6 +76,7 @@ kcdel_tmp_all(){
     ls /tmp/kubeconfig.*
 }
 
+# run first rancher-login()
 rancher-init-configfiles(){
 ADD_KUBECONFIG_FILES="$HOME/.kube"
 mkdir -p "${ADD_KUBECONFIG_FILES}"
@@ -87,4 +88,14 @@ rancher cluster ls --format json | jq -r '.Cluster.name' | while read cluster; d
     .users[0].user.exec.args += ["--auth-provider=oktaProvider", "--user=foobar"]
     ' "${ADD_KUBECONFIG_FILES}/$cluster"
 done
+}
+
+reload-icons(){
+    sudo touch /usr/share/icons ~/.local/share/icons/
+    sudo gtk-update-icon-cache -t -f /usr/share/icons/hicolor
+    sudo gtk-update-icon-cache -t -f /usr/share/icons/Arc-X-D
+}
+reload-pulseaudio(){
+    # reload pulseaudion config
+    rm -r ~/.config/pulse; pulseaudio -k
 }
