@@ -70,5 +70,14 @@
     "key": "ctrl+shift+v",
     "command": "-workbench.action.terminal.paste",
     "when": "terminalFocus"
+  },
+  {
+    "key": "alt+left",
+    "command": "workbench.action.navigateToLastEditLocation",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+q",
+    "command": "-workbench.action.navigateToLastEditLocation"
   }
 ]
