@@ -143,6 +143,15 @@ export LPASS_AGENT_TIMEOUT=0
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
+# Nodejs https://wiki.archlinux.org/title/Node.js#Allow_user-wide_installations
+export npm_config_prefix="$HOME/.local"
+
+# Hardware Video Acceleration
+# https://wiki.archlinux.org/title/Hardware_video_acceleration Intel
+export LIBVA_DRIVER_NAME="iHD"
+export LIBVA_DRIVERS_PATH="/usr/lib/dri"
+export VDPAU_DRIVER="va_gl"
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
