@@ -60,6 +60,17 @@ Chrome > 91
 or
 --enable-features=UseOzonePlatform 
 --ozone-platform=wayland
+or
+--ozone-platform-hint=wayland
+
+font size issue
+https://blogs.igalia.com/adunaev/2020/11/13/hidpi-support-in-chromium-for-wayland/
+--force-device-scale-factor
+
+https://blogs.igalia.com/msisov/2020/11/20/chrome-chromium-on-wayland-the-waylandification-project/
+
+Performance
+https://www.youtube.com/watch?v=1XQMF0fTxsg&ab_channel=BlinkOn
 
 # only in wayland
 --enable-webrtc-pipewire-capturer 
