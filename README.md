@@ -27,6 +27,12 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 bash <(curl -fsSL https://raw.githubusercontent.com/xantrix/dotfiles/master/install.sh)
 ```
 
+## cherry picking installation
+git clone repo in ${HOME}/.dotfiles
+cd ${HOME}/.dotfiles
+stow {config-dir}
+`this will create config files from {HOME}` 
+
 ## Keyboard shortcuts
 ### zsh + plugins
 https://gist.github.com/acamino/2bc8df5e2ed0f99ddbe7a6fddb7773a6
