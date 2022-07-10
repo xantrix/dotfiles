@@ -31,6 +31,9 @@ export MANPAGER='less -X';
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
 
+# Some software install bin in $HOME/bin (e.g. terraform-switcher)
+export PATH=$PATH:$HOME/bin
+
 # golang
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
