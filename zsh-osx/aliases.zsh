@@ -16,6 +16,7 @@ alias kcns='kubectl config set-context $(kubectl config current-context) --names
 alias kg="k get"
 alias kd="k describe"
 alias kc="k create"
+alias ke="k edit"
 
 # from plugings
 # alias kdel="kubectl delete"
@@ -38,7 +39,7 @@ kcecho(){
 
 kcgen(){
     echo "Gen new KUBECONFIG file in /tmp"
-    export KUBECONFIG=$(mktemp -t kubeconfig.XXXXXXXX)
+    export KUBECONFIG=$(mktemp -t "kubeconfig")
     ls $KUBECONFIG
 }
 

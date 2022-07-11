@@ -147,7 +147,8 @@ plugins=(
 
 # dynamic kubeconfig per virtual terminal to avoid mutating global state
 if [ -z "$KUBECONFIG" ]; then
-  export KUBECONFIG=$(mktemp -t kubeconfig.XXXXXXXX)
+  # -t prefix Generate a template (using the supplied prefix and TMPDIR if set) to create a filename template.
+  export KUBECONFIG=$(mktemp -t "kubeconfig")
   #remove the temp kubeconfig file when at shell exit
   trap "rm -f $KUBECONFIG" EXIT
 fi
