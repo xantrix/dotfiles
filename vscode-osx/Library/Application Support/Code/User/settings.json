@@ -1,0 +1,45 @@
+{
+  "git.autofetch": true,
+  "window.zoomLevel": 1,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "files.autoSave": "afterDelay",
+  "files.associations": {
+      "*.gotmpl": "goyaml"
+  },
+  "explorer.confirmDelete": false,
+  "editor.wordWrap": "on",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.tabSize": 2,
+  "editor.fontSize": 12,
+  "editor.renderControlCharacters": true,
+  "explorer.autoReveal": false,
+  "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "gitlens.currentLine.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.remotes": [
+    {"domain":"github.com", "type":"GitHub"},
+    {"domain":"git.vshn.net", "type": "GitLab"}
+  ],
+  "gitlens.hovers.currentLine.over": "line",
+  "redhat.telemetry.enabled": false,
+  "yaml.validate": false,
+  // Golang
+  "go.toolsManagement.autoUpdate": true,
+  // https://github.com/golang/vscode-go/blob/master/README.md
+  // https://github.com/golang/vscode-go/wiki/advanced
+  "go.useLanguageServer": true,
+  "[go]":{
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }    
+  },
+  "[go.mod]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  }
+}
