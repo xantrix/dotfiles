@@ -14,3 +14,8 @@ $stow zsh
 $stow vscode
 $stow tmux
 $stow vim
+
+# dry run
+# stow -nv <dir>
+# Unstow the packages
+# stow -D <dir>

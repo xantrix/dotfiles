@@ -4,6 +4,11 @@
 #bad: alias reload='source ~/.zshrc' use exec zsh (or: omz reload)
 alias reload='omz reload'
 
+# ibrew https://diewland.medium.com/how-to-install-python-3-7-on-macbook-m1-87c5b0fcb3b5
+# https://stackoverflow.com/questions/70315418/installing-python3-7-macbook-air-m1-problem
+alias ibrew="arch -x86_64 /usr/local/bin/brew"
+# usage: ibrew install python@3.7
+
 # etc...
 alias v='vim'
 
@@ -48,16 +53,3 @@ kcdel(){
     rm -f $KUBECONFIG
 }
 
-# run first rancher-login()
-rancher-init-configfiles(){
-ADD_KUBECONFIG_FILES="$HOME/.kube"
-mkdir -p "${ADD_KUBECONFIG_FILES}"
-rancher cluster ls --format json | jq -r '.Cluster.name' | while read cluster; do
-    rancher cluster kf $cluster > "${ADD_KUBECONFIG_FILES}/$cluster"
-    echo "creating kubeconfig '${ADD_KUBECONFIG_FILES}/$cluster'"
-    yq --inplace e '
-    del( .users[0].user.exec.args.[] | select(. == "--user*") ) |
-    .users[0].user.exec.args += ["--auth-provider=oktaProvider", "--user=foobar"]
-    ' "${ADD_KUBECONFIG_FILES}/$cluster"
-done
-}
