@@ -45,3 +45,5 @@ export PATH="$(brew --prefix)/opt/grep/libexec/gnubin:$PATH"
 
 # https://gitlab.com/gnachman/iterm2/-/wikis/tmux-Integration-Best-Practices
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
