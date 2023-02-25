@@ -20,7 +20,8 @@
   "gitlens.codeLens.enabled": false,
   "gitlens.remotes": [
     {"domain":"github.com", "type":"GitHub"},
-    {"domain":"git.vshn.net", "type": "GitLab"}
+    {"domain":"git.vshn.net", "type": "GitLab"},
+    {"domain":"git.amazeeio.cloud", "type": "GitLab"}
   ],
   "gitlens.hovers.currentLine.over": "line",
   "redhat.telemetry.enabled": false,
@@ -41,5 +42,19 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     }
-  }
+  },
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": false,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false,
+    "shellscript": false,
+    "goyaml": false
+  },
+  "git.enableCommitSigning": true,
+  "markdown-table-formatter.markdownGrammarScopes": [
+    "markdown",
+    "terraform-vars"
+  ]
 }
