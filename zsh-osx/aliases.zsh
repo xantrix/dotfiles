@@ -16,12 +16,12 @@ alias v='vim'
 # alias G="| grep" (not supported in bash)
 # export do="-oyaml --dry-run=client" (doesn't work)
 
-alias kns="k config view | grep namespace"
-alias kcns='kubectl config set-context $(kubectl config current-context) --namespace'
-alias kg="k get"
-alias kd="k describe"
-alias kc="k create"
-alias ke="k edit"
+# alias kns="k config view | grep namespace"
+# alias kcns='kubectl config set-context $(kubectl config current-context) --namespace'
+# alias kg="k get"
+# alias kd="k describe"
+# alias kc="k create"
+# alias ke="k edit"
 
 # from plugings
 # alias kdel="kubectl delete"
@@ -31,25 +31,25 @@ alias ke="k edit"
 # https://github.com/ahmetb/kubectl-aliases
 
 # see: dynamic kubeconfig
-klogin(){
-    #set -x
-    kcgen
-    cat ~/.kube/$1 > $KUBECONFIG
-}
+# klogin(){
+#     #set -x
+#     kcgen
+#     cat ~/.kube/$1 > $KUBECONFIG
+# }
 
-kcecho(){
-    echo $KUBECONFIG
-    cat $KUBECONFIG
-}
+# kcecho(){
+#     echo $KUBECONFIG
+#     cat $KUBECONFIG
+# }
 
-kcgen(){
-    echo "Gen new KUBECONFIG file in /tmp"
-    export KUBECONFIG=$(mktemp -t "kubeconfig")
-    ls $KUBECONFIG
-}
+# kcgen(){
+#     echo "Gen new KUBECONFIG file in /tmp"
+#     export KUBECONFIG=$(mktemp -t "kubeconfig")
+#     ls $KUBECONFIG
+# }
 
-kcdel(){
-    echo "Delete KUBECONFIG file"
-    rm -f $KUBECONFIG
-}
+# kcdel(){
+#     echo "Delete KUBECONFIG file"
+#     rm -f $KUBECONFIG
+# }
 
